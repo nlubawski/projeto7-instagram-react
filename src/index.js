@@ -3,16 +3,16 @@ import Navbar from './Navbar'
 import FundoMobile from './FundoMobile'
 import Corpo from './Corpo'
 
-function renderizarTudo(){
+function App(){
     return(
         <div>
-        <Navbar />
-        <Corpo />
-        <FundoMobile />
-    </div>
+            <Navbar />
+            <Corpo />
+            <FundoMobile />
+        </div>
     )}
 
-const pagina = renderizarTudo()
+const pagina = App()
 const elemento = document.querySelector('.root')
 
 ReactDOM.render(pagina, elemento)
