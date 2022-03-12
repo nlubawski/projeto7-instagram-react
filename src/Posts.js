@@ -1,13 +1,18 @@
 
 
 export default function Posts(){
+    const postagens = [{img:"assets/img/meowed.svg", nome:"meowed", conteudoImg:"assets/img/gato-telefone.svg",
+curtidasImg: "assets/img/respondeai.svg", curtidasTexto: "respondeai", curtidasNum: 101.523  },
+{img:"assets/img/barked.svg", nome:"barked", conteudoImg:"assets/img/dog.svg",
+curtidasImg: "assets/img/adorable_animals.svg", curtidasTexto: "adorable_animals", curtidasNum: 99.159  }]
     return(
+        postagens.map(item =>
         <div class="posts">
-                    <div class="post">
+            <div class="post">
                     <div class="topo">
                         <div class="usuario">
-                        <img src="assets/img/meowed.svg" />
-                        meowed
+                        <img src={item.img} />
+                            {item.nome}
                         </div>
                         <div class="acoes">
                         <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -15,7 +20,7 @@ export default function Posts(){
                     </div>
 
                     <div class="conteudo">
-                        <img src="assets/img/gato-telefone.svg" />
+                        <img src={item.conteudoImg} />
                     </div>
 
                     <div class="fundo">
@@ -31,49 +36,14 @@ export default function Posts(){
                         </div>
 
                         <div class="curtidas">
-                        <img src="assets/img/respondeai.svg" />
+                        <img src= {item.curtidasImg}/>
                         <div class="texto">
-                            Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
+                            Curtido por <strong>{item.curtidasTexto}</strong> e <strong>outras {item.curtidasNum} pessoas</strong>
                         </div>
                         </div>
-                    </div>
-                    </div>
-
-                    <div class="post">
-                    <div class="topo">
-                        <div class="usuario">
-                        <img src="assets/img/barked.svg" />
-                        barked
-                        </div>
-                        <div class="acoes">
-                        <ion-icon name="ellipsis-horizontal"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="conteudo">
-                        <img src="assets/img/dog.svg" />
-                    </div>
-
-                    <div class="fundo">
-                        <div class="acoes">
-                        <div>
-                            <ion-icon name="heart-outline"></ion-icon>
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                            <ion-icon name="paper-plane-outline"></ion-icon>
-                        </div>
-                        <div>
-                            <ion-icon name="bookmark-outline"></ion-icon>
-                        </div>
-                        </div>
-
-                        <div class="curtidas">
-                        <img src="assets/img/adorable_animals.svg" />
-                        <div class="texto">
-                            Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+            </div>
+            </div>
+        </div>
+        )
     )
 }
